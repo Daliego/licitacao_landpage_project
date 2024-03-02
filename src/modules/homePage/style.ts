@@ -24,6 +24,13 @@ export const SessionTitle = styled.h1`
   margin-left: 5rem;
   justify-content: flex-start;
   color: ${collorPallete.yellow};
+
+  @media (max-width: 500px) {
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
 `;
 
 export const SeeMoreButton = styled.div`
@@ -158,7 +165,7 @@ export const WordColored = styled.span`
   color: ${collorPallete.yellow};
 `;
 export const Title = styled.h1`
-  font-family: serif;
+  font-family: ${fonts.timesNew};
   font-size: 2.5rem;
 
   @media (max-width: 900px) {

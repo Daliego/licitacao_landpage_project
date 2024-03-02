@@ -1,4 +1,4 @@
-import { Button, Image } from "./style";
+import { Button } from "./style";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;

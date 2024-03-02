@@ -1,11 +1,9 @@
 import toast, { Toaster } from "react-hot-toast";
 import { Input } from "../../shared/components/input";
 import { useForm } from "react-hook-form";
-import { Form, LoginContainer, Main, Title } from "./style";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { Form, LoginContainer, Title } from "./style";
 import { AuthService } from "../../shared/services/auth_service";
 import { useNavigate } from "react-router-dom";
-import { collorPallete } from "../../assets/colors/colors";
 import { ButtonToInternalPage } from "../../shared/components/button";
 
 export const LoginPage = () => {

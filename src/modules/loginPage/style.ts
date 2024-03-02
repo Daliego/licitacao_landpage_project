@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { collorPallete } from "../../assets/colors/colors";
 
 export const Form = styled.form`
   display: flex;
@@ -21,6 +20,14 @@ export const LoginContainer = styled.div`
   height: 60%;
   background-color: black;
   gap: 1rem;
+
+  @media (max-width: 800px) {
+    width: 60%;
+  }
+
+  /* @media (max-width: 600px) {
+    width: 60%;
+  } */
 `;
 
 export const Title = styled.h2``;

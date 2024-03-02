@@ -1,5 +1,4 @@
-import { ThemeContext, ThemeProvider } from "styled-components";
-import { LinkInPage } from "../../../../shared/components/linkInPage";
+import {  ThemeProvider } from "styled-components";
 import { LinkToExternalPage } from "../../../../shared/components/linkToExternalPage";
 import { Main, Text } from "./style";
 import { AiFillInstagram } from "react-icons/ai";

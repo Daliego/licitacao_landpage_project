@@ -52,7 +52,7 @@ export function HomePage() {
     <Main>
       <Header id="Header">
         <Title>
-          Licitação<b style={{ color: collorPallete.yellow }}>.arq</b>
+          Licitação<b style={{ color: collorPallete.yellow, fontFamily: 'sans-serif' }}>arq</b>
         </Title>
         <ThemeProvider theme={{ showMenu }}>
           <NavBar>

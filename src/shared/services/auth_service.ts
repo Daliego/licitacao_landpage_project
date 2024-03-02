@@ -1,5 +1,5 @@
 import { firestore } from "../config/firebaseConfig";
-import { collection, getDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { User } from "../models/user";
 import { LoginUserDto } from "../models/genericModels/loginUserDto";
 

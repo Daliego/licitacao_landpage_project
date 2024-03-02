@@ -7,8 +7,6 @@ import { NavBarLayout } from "../../modules/adminPages/components/navBarLayout";
 import { AdminShowClientsForm } from "../../modules/adminPages/clientsTables";
 
 export function AppRoutes() {
-  const navigate = useNavigate();
-
   const ProtectedRouter = ({ children }) => {
     const id = localStorage.getItem("userId");
     // if (id === undefined || id === null) {
