@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const FloatIcon = styled.img`
   position: fixed;
+  padding: 2px;
   width: 60px;
   height: 60px;
   bottom: 40px;
   right: 40px;
-  /* background-color: #25d366; */
+  background-color: #25d366;
   color: #fff;
   border: solid transparent;
   border-radius: 50px;
