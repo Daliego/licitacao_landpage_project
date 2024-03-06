@@ -10,6 +10,8 @@ import { Client } from "../../../shared/models/client";
 import { ulid } from "ulidx";
 import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
+import { collorPallete } from "../../../assets/colors/colors";
+import { sizes } from "../../../assets/staticSizes/size";
 
 export function ContactForm() {
   // const {
@@ -72,11 +74,26 @@ export function ContactForm() {
         toastOptions={{ iconTheme: { primary: "white", secondary: "green" } }}
       />
       <Row>
-        <Input name="name" placeholder="Nome*" byForm={myForm} />
-        <Input name="whatsapp" placeholder="Whatsapp*" byForm={myForm} />
+        <Input
+          name="name"
+          placeholder="Nome*"
+          byForm={myForm}
+          style={{ borderColor: collorPallete.yellow }}
+        />
+        <Input
+          name="whatsapp"
+          placeholder="Whatsapp*"
+          byForm={myForm}
+          style={{ borderColor: collorPallete.yellow }}
+        />
       </Row>
       <Row>
-        <Input name="email" placeholder="Email" byForm={myForm} />
+        <Input
+          name="email"
+          placeholder="Email"
+          byForm={myForm}
+          style={{ borderColor: collorPallete.yellow }}
+        />
       </Row>
       <Row
         style={{
@@ -94,11 +111,20 @@ export function ContactForm() {
       </Row> */}
       {hasCnpj && (
         <Row>
-          <Input name="cnpj" placeholder="CNPJ" byForm={myForm} />
+          <Input
+            name="cnpj"
+            placeholder="CNPJ"
+            byForm={myForm}
+            style={{ borderColor: collorPallete.yellow }}
+          />
         </Row>
       )}
       <Row>
-        <ButtonToInternalPage type="submit" disabled={isSubmitting}>
+        <ButtonToInternalPage
+          type="submit"
+          disabled={isSubmitting}
+          style={{ width: sizes.buttonSize }}
+        >
           Enviar
         </ButtonToInternalPage>
       </Row>

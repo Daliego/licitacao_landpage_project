@@ -1,5 +1,5 @@
 import { FloatIcon } from "./style";
-import whatsapp_logo from "../../../assets/whatsapp_logo.svg";
+import whatsapp_logo from "../../../assets/whatsapp.svg";
 
 interface WhattsappLayoutProps {
   children: React.ReactNode;

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { collorPallete } from "../../../../assets/colors/colors";
+import { sizes } from "../../../../assets/staticSizes/size";
 
 export const Button = styled.button`
+  width: ${sizes.buttonSize};
   background-color: ${collorPallete.yellow};
   border: none;
   border-radius: 5px;

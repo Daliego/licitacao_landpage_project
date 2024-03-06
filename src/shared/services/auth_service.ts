@@ -1,7 +1,8 @@
-import { firestore } from "../config/firebaseConfig";
+import { authenication, firestore } from "../config/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { User } from "../models/user";
 import { LoginUserDto } from "../models/genericModels/loginUserDto";
+import { EmailAuthCredential } from "firebase/auth";
 
 async function login(user: LoginUserDto): Promise<string | undefined> {
   const reference = collection(firestore, "users");
@@ -18,3 +19,7 @@ async function login(user: LoginUserDto): Promise<string | undefined> {
 }
 
 export const AuthService = { login };
+
+// async function loginIn(user: LoginUserDto) {
+//   EmailAuthCredential()
+// }

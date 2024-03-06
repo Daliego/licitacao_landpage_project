@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { getAuth } from "firebase/auth";
 
 // const firebaseConfig = {
 //   apiKey: import.meta.env.GOOGLE_PRIVATE_KEY,
@@ -27,5 +28,6 @@ const app = initializeApp(firebaseConfig);
 
 const firestore = getFirestore(app);
 const storage = getStorage(app);
+const authenication = getAuth(app);
 
-export { firestore, storage };
+export { firestore, storage, authenication };

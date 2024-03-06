@@ -4,6 +4,7 @@ import felipeProfile from "../../../../assets/images/felipe-profile.jpg";
 import { ButtonToPosition } from "../button";
 import { WordColored } from "../../style";
 import { Button } from "../button/style";
+import { sizes } from "../../../../assets/staticSizes/size";
 
 interface HowAmIProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -44,7 +45,7 @@ export const HowAmI = ({ onClick }: HowAmIProps) => {
         <ButtonContainer>
           <Button
             style={{
-              width: "40%",
+              width: sizes.buttonSize
             }}
             onClick={onClick}
           >

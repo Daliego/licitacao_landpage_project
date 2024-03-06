@@ -1,4 +1,5 @@
 import { collorPallete } from "../../../../assets/colors/colors";
+import { sizes } from "../../../../assets/staticSizes/size";
 import { ButtonToInternalPage } from "../../../../shared/components/button";
 import { LinkToExternalPage } from "../../../../shared/components/linkToExternalPage";
 import { ContactForm } from "../../form";
@@ -16,6 +17,8 @@ export function ContactMe() {
             textAlign: "center",
             textDecoration: "none",
             backgroundColor: `${collorPallete.yellow}`,
+            letterSpacing: "normal",
+            width: sizes.buttonSize,
           }}
         >
           Clique aqui

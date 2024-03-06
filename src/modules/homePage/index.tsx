@@ -159,7 +159,7 @@ export function HomePage() {
       </Session>
 
       {/* tem que escolher um backgroud color pra essa sessão */}
-      <Session id="contact" style={{ backgroundColor: "#d2c9b8" }}>
+      <Session id="contact" style={{ backgroundColor: "#fff" }}>
         {/* <SessionTitle style={{ color: "black" }}>
           Fale Conosco (Contato)
         </SessionTitle> */}

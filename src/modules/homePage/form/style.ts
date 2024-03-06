@@ -13,11 +13,19 @@ export const Row = styled.div`
   gap: 1rem;
 `;
 
-export const InputCheckbox = styled.input``;
+export const InputCheckbox = styled.input`
+  justify-self: flex-start;
+`;
 
 export const Label = styled.label`
-  width: 30%;
+  /* width: 20%; */
   display: flex;
   justify-content: flex-start;
+  text-align: start;
+  margin-right: .5rem;
   color: #000;
+
+  /* @media (min-width: 1200px) {
+      width: 20%;
+  } */
 `;
