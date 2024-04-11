@@ -17,6 +17,7 @@ export function AdminCardsForm() {
   useEffect(() => {
     CardService.getCards().then((cards) => {
       if (cards) {
+        console.log(cards);
         setCards(cards);
         setSelectedCard(cards[0]);
       }
@@ -77,6 +78,18 @@ export function AdminCardsForm() {
     window.location.reload();
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    console.log(e);
+    // e.preventDefault();
+    if (e.key === "Enter") {
+      console.log("Its true");
+      setSelectedCard((oldState) => ({
+        ...oldState,
+        description: oldState.description,
+      }));
+    }
+  };
+
   return (
     <Main>
       <Toaster
@@ -107,6 +120,7 @@ export function AdminCardsForm() {
             placeholder="Description"
             value={selectedCard?.description}
             onChange={handleChangeCard}
+            onKeyDown={handleKeyDown}
             height={"100%"}
             maxLength={200}
             style={{ height: "100%" }}

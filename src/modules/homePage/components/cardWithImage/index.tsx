@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import { Img } from "../../../../shared/components/image/index";
 import { Container, Main } from "./style";
 
 interface CardWithImageProps {
   icon?: string;
-  children?: React.ReactNode;
+  children?: string;
 }
 
 export function CardWithImage({ children, icon }: CardWithImageProps) {
+    // useEffect(() => {
+    //     children.rep
+    // }, [children]);
+
   return (
     <Main>
       <Container>

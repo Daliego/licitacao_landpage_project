@@ -1,25 +1,34 @@
-import { authenication, firestore } from "../config/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
-import { User } from "../models/user";
+
+import { authenication } from "../config/firebaseConfig";
 import { LoginUserDto } from "../models/genericModels/loginUserDto";
-import { EmailAuthCredential } from "firebase/auth";
+import { User, signInWithEmailAndPassword } from "firebase/auth";
 
-async function login(user: LoginUserDto): Promise<string | undefined> {
-  const reference = collection(firestore, "users");
+// async function login(user: LoginUserDto): Promise<string | undefined> {
+//   const reference = collection(firestore, "users");
 
-  const snapshot = await getDocs(reference);
+//   const snapshot = await getDocs(reference);
 
-  const users = snapshot.docs.map((doc) => doc.data()) as User[];
+//   const users = snapshot.docs.map((doc) => doc.data()) as User[];
 
-  const loggedUser = users.find(
-    (u) => u.user === user.user && u.password === user.password
+//   const loggedUser = users.find(
+//     (u) => u.user === user.user && u.password === user.password
+//   );
+
+//   return loggedUser ? loggedUser.id : undefined;
+// }
+
+async function login(user: LoginUserDto): Promise<User> {
+  const userCredential = await signInWithEmailAndPassword(
+    authenication,
+    user.user,
+    user.password
   );
-
-  return loggedUser ? loggedUser.id : undefined;
+  return userCredential.user;
+  // .then((userCredential) => userCredential.user)
+  // .catch((error) => {
+  //   const errorCode = error.code;
+  //   const errorMessage = error.message;
+  // });
 }
 
 export const AuthService = { login };
-
-// async function loginIn(user: LoginUserDto) {
-//   EmailAuthCredential()
-// }

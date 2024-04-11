@@ -24,6 +24,7 @@ export const Container = styled.div`
   height: 50%;
   display: flex;
   text-align: justify;
+  white-space: pre-line;
   /* font-size: 100%; */
   /* overflow-wrap: break-word; */
   /* text-size-adjust: calc() ; */

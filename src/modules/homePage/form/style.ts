@@ -11,6 +11,19 @@ export const Row = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
+
+  /* #NameWhatsapp {
+    background-color: red;
+    color: red;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+  } */
+
+  /* @media (max-width: 768px) {
+    flex-direction: column;
+  } */
 `;
 
 export const InputCheckbox = styled.input`
@@ -22,7 +35,7 @@ export const Label = styled.label`
   display: flex;
   justify-content: flex-start;
   text-align: start;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   color: #000;
 
   /* @media (min-width: 1200px) {

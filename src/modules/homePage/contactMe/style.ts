@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { fonts } from "../../../../assets/fonts/fonts";
+import { fonts } from "../../../assets/fonts/fonts";
+import { collorPallete } from "../../../assets/colors/colors";
 
 export const Main = styled.div`
   display: flex;
   width: 80%;
   flex-direction: row;
+  /* justify-content: center; */
   font-family: ${fonts.timesNew};
   /* font: bold; */
 
@@ -16,7 +18,7 @@ export const Main = styled.div`
     width: 100%;
   }
 
-  #contact_01 {
+  /* #contact_01 {
     border-right: 3px solid black;
     gap: 1rem;
     color: black;
@@ -27,7 +29,7 @@ export const Main = styled.div`
       border-right: none;
       border-bottom: 3px solid black;
     }
-  }
+  } */
 `;
 
 export const Container = styled.div`
@@ -64,6 +66,29 @@ export const ContainerCell = styled.div`
   height: 100%;
   width: 100%;
   padding: 1rem;
+`;
+
+export const Link = styled.a`
+  display: contents;
+  /* width: 0%;
+  padding: none;
+  margin: none; */
+  /* text-decoration: none; */
+  color: #000;
+  transition: 0.1s ;
+  cursor: pointer;
+
+  &:hover {
+    color: ${collorPallete.greenWhatsapp};
+    /* border-bottom: 5px solid red; */
+    /* text-decoration: underline; */
+  }
+
+  /* font-size: 1.5rem; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* text-align: left; */
+  /* margin-bottom: 1rem; */
 `;
 
 export const Form = styled.form``;

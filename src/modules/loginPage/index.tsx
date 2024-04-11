@@ -5,6 +5,10 @@ import { Form, LoginContainer, Title } from "./style";
 import { AuthService } from "../../shared/services/auth_service";
 import { useNavigate } from "react-router-dom";
 import { ButtonToInternalPage } from "../../shared/components/button";
+import { useAuth } from "../../shared/hooks/useAuth";
+import { User } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { saveDataInStorage } from "../../shared/utils/saveDataInStorage";
 
 export const LoginPage = () => {
   const formController = useForm();
@@ -12,20 +16,19 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data: any) => {
-    //requisição para o firebase
-    console.log(data);
+    try {
+      const userCredential: User = await AuthService.login({
+        user: data.user,
+        password: data.password,
+      });
 
-    const userId = await AuthService.login({
-      user: data.user,
-      password: data.password,
-    });
-
-    if (userId) {
-      navigate("/products");
-      localStorage.setItem("userId", userId);
+      if (userCredential) {
+        saveDataInStorage(userCredential);
+        navigate("/products");
+      }
+    } catch (e) {
+      toast.error("Usuário ou senha inválidos");
     }
-
-    toast.error("Usuário ou senha inválidos");
   };
 
   return (
@@ -55,16 +58,7 @@ export const LoginPage = () => {
         <div
           style={{ display: "flex", justifyContent: "center", width: "100%" }}
         >
-          <ButtonToInternalPage
-          // style={{
-          //   justifyContent: "center",
-          //   justifySelf: "center",
-          //   justifyItems: "center",
-          //   display: "flex",
-          // }}
-          >
-            Login
-          </ButtonToInternalPage>
+          <ButtonToInternalPage>Login</ButtonToInternalPage>
         </div>
       </LoginContainer>
     </Form>

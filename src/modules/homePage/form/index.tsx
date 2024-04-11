@@ -12,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 import { collorPallete } from "../../../assets/colors/colors";
 import { sizes } from "../../../assets/staticSizes/size";
+import "./style.css";
 
 export function ContactForm() {
   // const {
@@ -73,7 +74,7 @@ export function ContactForm() {
         position="bottom-center"
         toastOptions={{ iconTheme: { primary: "white", secondary: "green" } }}
       />
-      <Row>
+      <Row id="name_whatsapp">
         <Input
           name="name"
           placeholder="Nome*"

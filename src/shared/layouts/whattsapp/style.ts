@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const FloatIcon = styled.img`
   position: fixed;
   padding: 2px;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  bottom: 60px;
   right: 40px;
   background-color: #25d366;
   color: #fff;
@@ -19,4 +19,10 @@ export const FloatIcon = styled.img`
   :hover {
     background-color: blue;
   }
+
+  @media (max-width: 720px) {
+      bottom: 20px;
+      right: 20px;
+  }
+  
 `;

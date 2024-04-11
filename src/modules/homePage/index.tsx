@@ -1,4 +1,3 @@
-import { collorPallete } from "../../assets/colors/colors";
 import { Footer } from "./../homePage/components/footer/index";
 import {
   BigTitle,
@@ -16,20 +15,21 @@ import {
   SessionBody,
   SessionTitle,
   SmallTitle,
-  Title,
   WordColored,
 } from "./style";
 import { CardWithImage } from "./components/cardWithImage";
 import { LinkInPage } from "../../shared/components/linkInPage";
 import { ButtonToPosition } from "./components/button";
 import { HowAmI } from "./components/howAmI";
-import { ContactMe } from "./components/contactMe";
+import { ContactMe } from "./contactMe";
 import { useEffect, useState } from "react";
 import { CardService } from "../../shared/services/card_service";
 import { Card } from "../../shared/models/card";
 import { AiOutlineMenu, AiOutlineClose, AiFillCaretDown } from "react-icons/ai";
 import { ThemeProvider } from "styled-components";
 import { FaqComponent } from "./components/faq";
+import logo from "../../assets/images/logo_icon.svg";
+import { Img } from "../../shared/components/image";
 
 export function HomePage() {
   const handleClickToPosition = (e, id: string) => {
@@ -51,9 +51,10 @@ export function HomePage() {
   return (
     <Main>
       <Header id="Header">
-        <Title>
+        <Img src={logo} />
+        {/* <Title>
           Licitação<b style={{ color: collorPallete.yellow, fontFamily: 'sans-serif' }}>arq</b>
-        </Title>
+        </Title> */}
         <ThemeProvider theme={{ showMenu }}>
           <NavBar>
             <NavItem>
@@ -61,7 +62,7 @@ export function HomePage() {
                 Sobre mim
               </LinkInPage>
               <LinkInPage onClick={(e) => handleClickToPosition(e, "products")}>
-                Produto
+                Oportunidades
               </LinkInPage>
               <LinkInPage onClick={(e) => handleClickToPosition(e, "contact")}>
                 Contato
@@ -113,7 +114,7 @@ export function HomePage() {
       </Session>
 
       <Session id="products">
-        <SessionTitle>O que eu ofereço?</SessionTitle>
+        <SessionTitle>Oportunidades</SessionTitle>
         <SessionBody>
           <CardsTable>
             {cards.map((card) => (
@@ -123,24 +124,6 @@ export function HomePage() {
                 </CardWithImage>
               </>
             ))}
-            {/* <CardWithImage icon={product1}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus
-              rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae
-              volutpat.
-            </CardWithImage>
-            <CardWithImage icon={product2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus
-              rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae
-              volutpat.
-            </CardWithImage>
-            <CardWithImage icon={product3}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus
-              rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae
-              volutpat.
-            </CardWithImage> */}
           </CardsTable>
         </SessionBody>
         <SessionBody>

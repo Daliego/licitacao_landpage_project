@@ -38,10 +38,11 @@ export const SeeMoreButton = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: ${collorPallete.yellow};
   cursor: pointer;
 
   &:hover {
-    color: ${collorPallete.yellow};
+    color: white;
   }
 `;
 
@@ -122,6 +123,12 @@ export const Header = styled.div`
   padding: 1rem;
   /* gap: 2rem; */
 
+  & img {
+    /* justify-self: flex-start; */
+    width: 200px;
+    height: 100%;
+  }
+
   @media (max-width: 768px) {
     justify-content: space-between;
     align-items: center;
@@ -162,7 +169,7 @@ export const SmallTitle = styled.h1`
 
 export const ContactBody = styled.div``;
 export const WordColored = styled.span`
-  color: ${collorPallete.yellow};
+  color: ${collorPallete.darkerYellow};
 `;
 export const Title = styled.h1`
   font-family: ${fonts.timesNew};

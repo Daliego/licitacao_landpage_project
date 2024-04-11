@@ -1,21 +1,25 @@
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import {
+  HashRouter,
+  Navigate,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import { HomePage } from "../../modules/homePage";
 import { WhattsappLayout } from "../layouts/whattsapp";
 import { LoginPage } from "../../modules/loginPage";
 import { AdminCardsForm } from "../../modules/adminPages/changeCardsForm";
 import { NavBarLayout } from "../../modules/adminPages/components/navBarLayout";
 import { AdminShowClientsForm } from "../../modules/adminPages/clientsTables";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../contexts/auth_context";
+import { User } from "firebase/auth";
 
 export function AppRoutes() {
   const ProtectedRouter = ({ children }) => {
-    const id = localStorage.getItem("userId");
-    // if (id === undefined || id === null) {
-    //   navigate("/login");
-    // }
+    const user = localStorage.getItem("user");
 
-    console.log(id);
-
-    return id ? children : <Navigate replace to="/login" />;
+    return user ? children : <Navigate replace to="/login" />;
   };
 
   const routes = (

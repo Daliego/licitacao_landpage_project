@@ -3,29 +3,27 @@ import { collorPallete } from "../../../../assets/colors/colors";
 import { Main, NavBar, Logo, NavbarItens } from "./style";
 import { LinkInPage } from "../../../../shared/components/linkInPage";
 import { AiOutlineLogout } from "react-icons/ai";
+import { useAuth } from "../../../../shared/hooks/useAuth";
 
 interface NavBarLayoutProps {
   children: React.ReactNode;
 }
 
 export function NavBarLayout({ children }: NavBarLayoutProps) {
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
-
-  console.log("NavBarLayout");
-  console.log(location.pathname);
 
   const handleClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     pathName: string
   ) => {
     e.preventDefault();
-    console.log("click");
+
     navigate(`/${pathName}`);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("userId");
+    localStorage.clear();    
     navigate("/");
   };
 

@@ -1,8 +1,6 @@
-import {  ThemeProvider } from "styled-components";
-import { LinkToExternalPage } from "../../../../shared/components/linkToExternalPage";
-import { Main, Text } from "./style";
-import { AiFillInstagram } from "react-icons/ai";
-import { BsLinkedin } from "react-icons/bs";
+import { ThemeProvider } from "styled-components";
+import { Link, Main, Text } from "./style";
+import { AiFillMail, AiFillInstagram } from "react-icons/ai";
 import { collorPallete } from "../../../../assets/colors/colors";
 
 export function Footer() {
@@ -15,46 +13,15 @@ export function Footer() {
   return (
     <Main>
       <ThemeProvider theme={{ hoverColor: `${collorPallete.orange}` }}>
-        <LinkToExternalPage
-          style={{
-            backgroundColor: "transparent",
-            textDecoration: "none",
-            textAlign: "start",
-          }}
-          link="google"
-        >
-          ©Araujo, 2021 - Todos os direitos reservados
-        </LinkToExternalPage>
-        <LinkToExternalPage
-          style={{
-            backgroundColor: "transparent",
-            textDecoration: "none",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: ".3rem",
-            textAlign: "start",
-          }}
-          link="google"
-        >
+        <Link>©Araujo, 2021 - Todos os direitos reservados</Link>
+        <Link target="_blank" href="https://www.instagram.com/licitacaoarq">
           <AiFillInstagram size={25} color="white" />
-          <Text>FelipeInstageram</Text>
-        </LinkToExternalPage>
-        <LinkToExternalPage
-          style={{
-            backgroundColor: "transparent",
-            textDecoration: "none",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: ".3rem",
-            textAlign: "start",
-          }}
-          link="google"
-        >
-          <BsLinkedin size={30} color="white" />
-          <Text>FelipeLinkedin</Text>
-        </LinkToExternalPage>
+          <Text>Licitacaoarq</Text>
+        </Link>
+        <Link target="_blank" href="mailto:licitacaoarq@licitacaoarq.com">
+          <AiFillMail size={25} color="white" />
+          <Text>Email</Text>
+        </Link>
         <Text onClick={handleClick}>Voltar ao início</Text>
       </ThemeProvider>
     </Main>
