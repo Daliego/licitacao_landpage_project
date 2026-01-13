@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <Main>
       <ThemeProvider theme={{ hoverColor: `${collorPallete.orange}` }}>
-        <Link>©Araujo, 2021 - Todos os direitos reservados</Link>
+        <Link target="_blank" href="https://daliego.github.io/portfolio-case-studies/">©Araujo, 2021 - Todos os direitos reservados</Link>
         <Link target="_blank" href="https://www.instagram.com/licitacaoarq">
           <AiFillInstagram size={25} color="white" />
           <Text>Licitacaoarq</Text>

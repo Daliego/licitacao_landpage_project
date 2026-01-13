@@ -11,12 +11,9 @@ import { LoginPage } from "../../modules/loginPage";
 import { AdminCardsForm } from "../../modules/adminPages/changeCardsForm";
 import { NavBarLayout } from "../../modules/adminPages/components/navBarLayout";
 import { AdminShowClientsForm } from "../../modules/adminPages/clientsTables";
-import { useContext, useEffect } from "react";
-import { AuthContext } from "../contexts/auth_context";
-import { User } from "firebase/auth";
 
 export function AppRoutes() {
-  const ProtectedRouter = ({ children }) => {
+  const ProtectedRouter = ({ children }: { children: React.ReactNode }) => {
     const user = localStorage.getItem("user");
 
     return user ? children : <Navigate replace to="/login" />;
