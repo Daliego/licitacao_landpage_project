@@ -1,9 +1,7 @@
 import {
-  HashRouter,
   Navigate,
   Route,
   Routes,
-  useNavigate,
 } from "react-router-dom";
 import { HomePage } from "../../modules/homePage";
 import { WhattsappLayout } from "../layouts/whattsapp";
